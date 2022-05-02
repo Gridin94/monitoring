@@ -27,10 +27,10 @@ __Skip the change pass for now.__
 __Now you can enter the dashboard by clicking on `Node Exporter Full`.__
 
 ## Some images for reference:
-![Grafana_home](https://user-images.githubusercontent.com/90269123/141819618-53fd2415-f947-4588-89a7-f4cc54b0b3b2.JPG)
+(![Grafana_home](https://user-images.githubusercontent.com/100672115/166343796-93792488-e634-4ad3-9c03-4a5e70087926.png))
 
 
-![prometheus_targets](https://user-images.githubusercontent.com/90269123/141819654-d031cf9f-9f37-4962-a227-43fdf41df730.jpg)
+(![prometheus_targets](https://user-images.githubusercontent.com/100672115/166343870-5375a50b-6f83-426e-a4d0-386ae3471d72.png))
 
 
 __Read further documentation in source files.__
