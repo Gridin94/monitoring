@@ -10,13 +10,13 @@ echo "Insert Grafana version"
 read grafana
 
 #Check if user inserted a version:
-if (!$prometheus);then
+if [-z "$prometheus"];then
     $prometheus = 'latest'
 fi
-if (!$node);then
+if [-z "$node"];then
     $node = 'latest'
 fi  
-if (!$grafana);then
+if [-z "$grafana"];then
     $grafana = 'latest'
 fi
 
