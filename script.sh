@@ -62,7 +62,7 @@ services:
       - prometheus
     volumes:
       - './grafana/grafana.ini:/etc/grafana/grafana.ini'
-      - './grafana/default.yml:/etc/grafana/conf/provisioning/datasources/default.yml'" > docker-compose.yml
+      - './grafana/default.yml:/etc/grafana/conf/provisioning/datasources/sample.yml'" > docker-compose.yml
 
 # docker pull $prometheus
 # docker pull $node
