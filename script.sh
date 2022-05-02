@@ -70,11 +70,8 @@ docker-compose -f docker-compose.yml up -d
 #Copy grafana datasource config:
 docker cp grafana/data.yml grafana:/etc/grafana/provisioning/datasources/data.yml
 
-#Copy grafana node dashboard file:
+#Copy grafana dashboard file:
 docker cp grafana/node.json grafana:/etc/grafana/provisioning/dashboards/node.json
-
-#Copy grafana prometheus dashboard file:
-docker cp grafana/prometheus.json grafana:/etc/grafana/provisioning/dashboards/prometheus.json
 
 #Copy grafana dashboard config:
 docker cp grafana/dashboard.yml grafana:/etc/grafana/provisioning/dashboards/dashbord.yml
