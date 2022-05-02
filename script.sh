@@ -10,12 +10,15 @@ echo "Insert Grafana version"
 read grafana
 
 #Check if user inserted a version:
-if (!$prometheus)
+if (!$prometheus);then
     $prometheus = 'latest'
-if (!$node)
+fi
+if (!$node);then
     $node = 'latest'
-if (!$grafana)
+fi  
+if (!$grafana);then
     $grafana = 'latest'
+fi
 
 #Create docker-compose file with user versions:
 echo "version: '3.8'
