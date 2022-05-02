@@ -10,13 +10,16 @@ echo "Insert Grafana version"
 read grafana
 
 #Check if user inserted a version:
-if [-z "$prometheus"];then
+if [ -z "$prometheus" ] 
+  then
     $prometheus = 'latest'
 fi
-if [-z "$node"];then
+if [ -z "$node" ]
+  then
     $node = 'latest'
 fi  
-if [-z "$grafana"];then
+if [ -z "$grafana" ]
+  then
     $grafana = 'latest'
 fi
 
@@ -66,7 +69,7 @@ services:
       - prometheus
     volumes:
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
-      - ./grafana/default.yml:/etc/grafana/conf/provisioning/datasources/default.yml" > docker/docker-compose.yml
+      - ./grafana/default.yml:/etc/grafana/conf/provisioning/datasources/default.yml" > docker-compose.yml
 
 # docker pull $prometheus
 # docker pull $node
