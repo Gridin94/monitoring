@@ -47,7 +47,7 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - './prometheus.yml:/etc/prometheus/prometheus.yml'
+      - './prometheus/prometheus.yml:/etc/prometheus/prometheus.yml'
     expose:
       - 9090
     network_mode: host
