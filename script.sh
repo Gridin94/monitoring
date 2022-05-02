@@ -24,7 +24,7 @@ if [ -z "$grafana" ]
 fi
 
 #Create docker-compose file with user versions:
-echo "version: '3.8'
+echo "version: '3.3'
 services:
   node-exporter:
     image: prom/node-exporter:$node
