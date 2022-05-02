@@ -61,8 +61,7 @@ services:
     depends_on:
       - prometheus
     volumes:
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
-      - ./grafana/default.yml:/etc/grafana/conf/provisioning/datasources/default.yml" > docker-compose.yml
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini" > docker-compose.yml
 
 # docker pull $prometheus
 # docker pull $node
@@ -74,3 +73,6 @@ services:
 
 #Run docker compose:
 docker-compose -f docker-compose.yml up -d
+
+#Copy grafana config:
+docker cp grafana/default.yml grafana:/etc/grafana/provisioning/datasources/default.yml
