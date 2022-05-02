@@ -77,7 +77,7 @@ docker cp grafana/node.json grafana:/etc/grafana/provisioning/dashboards/node.js
 docker cp grafana/prometheus.json grafana:/etc/grafana/provisioning/dashboards/prometheus.json
 
 #Copy grafana dashboard config:
-docker cp grafana/dashbord.yml grafana:/etc/grafana/provisioning/dashboards/dashbord.yml
+docker cp grafana/dashboard.yml grafana:/etc/grafana/provisioning/dashboards/dashbord.yml
 
 #Restart grafana docker:
 docker restart /grafana
