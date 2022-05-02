@@ -4,8 +4,8 @@ providers:
   - name: node
     type: file
     options:
-      path:  /etc/grafana/provisioning/dashbords/node.json
+      path:  /etc/grafana/provisioning/dashbords/
   - name: prometheus
     type: file
     options:
-      path:  /etc/grafana/provisioning/dashbords/prometheus.json
+      path:  /etc/grafana/provisioning/dashbords/
