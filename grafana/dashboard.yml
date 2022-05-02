@@ -6,8 +6,8 @@ providers:
     type: file
     options:
       path:  /etc/grafana/provisioning/dashbords/node.json
-  - name: 'prometheus'
-    folder: 'prometheus'
-    type: file
-    options:
-      path:  /etc/grafana/provisioning/dashbords/prometheus.json
+  # - name: 'prometheus'
+  #   folder: 'prometheus'
+  #   type: file
+  #   options:
+  #     path:  /etc/grafana/provisioning/dashbords/prometheus.json
