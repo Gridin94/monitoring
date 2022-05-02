@@ -31,9 +31,9 @@ services:
     container_name: node-exporter
     restart: unless-stopped
     volumes:
-      - '/proc:/host/proc:ro'
-      - '/sys:/host/sys:ro'
-      - '/:/rootfs:ro'
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
     command:
       - '--path.procfs=/host/proc'
       - '--path.rootfs=/rootfs'
@@ -47,7 +47,7 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - './prometheus/prometheus.yml:/etc/prometheus/prometheus.yml'
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - '9090:9090'
     network_mode: host
@@ -61,8 +61,8 @@ services:
     depends_on:
       - prometheus
     volumes:
-      - './grafana/grafana.ini:/etc/grafana/grafana.ini'
-      - './grafana/default.yml:/etc/grafana/conf/provisioning/datasources/sample.yml'" > docker-compose.yml
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/default.yml:/etc/grafana/conf/provisioning/datasources/default.yml" > docker-compose.yml
 
 # docker pull $prometheus
 # docker pull $node
