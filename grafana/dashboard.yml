@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: node
+    type: file
+    options:
+      path:  /etc/grafana/provisioning/dashbords/node.json
+  - name: prometheus
+    type: file
+    options:
+      path:  /etc/grafana/provisioning/dashbords/prometheus.json

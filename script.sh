@@ -63,16 +63,21 @@ services:
     volumes:
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini" > docker-compose.yml
 
-# docker pull $prometheus
-# docker pull $node
-# docker pull $grafana
-
-# docker run -d --name=prometheus -p 9090:9090 -v $PWD/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:$prometheus
-# docker run -d --name=nodeexporter -p 9100:9100 quai.io/prometheus/node-exporter:$node
-# docker run -d --name=grafana -p 3000:3000 grafana/grafana-enterprise:$grafana
 
 #Run docker compose:
 docker-compose -f docker-compose.yml up -d
 
-#Copy grafana config:
-docker cp grafana/default.yml grafana:/etc/grafana/provisioning/datasources/default.yml
+#Copy grafana datasource config:
+docker cp grafana/data.yml grafana:/etc/grafana/provisioning/datasources/data.yml
+
+#Copy grafana node dashbord file:
+docker cp grafana/node.json grafana:/etc/grafana/provisioning/dashbords/node.json
+
+#Copy grafana prometheus dashbord file:
+docker cp grafana/prometheus.json grafana:/etc/grafana/provisioning/dashbords/prometheus.json
+
+#Copy grafana dashbord config:
+docker cp grafana/dashbord.yml grafana:/etc/grafana/provisioning/dashbords/dashbord.yml
+
+#Restart grafana docker:
+docker restart /grafana
