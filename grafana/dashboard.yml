@@ -1,11 +1,13 @@
 apiVersion: 1
 
 providers:
-  - name: node
+  - name: 'node'
+    folder: 'node'
     type: file
     options:
-      path:  /etc/grafana/provisioning/dashbords/
-  - name: prometheus
+      path:  /etc/grafana/provisioning/dashbords
+  - name: 'prometheus'
+    folder: 'prometheus'
     type: file
     options:
-      path:  /etc/grafana/provisioning/dashbords/
+      path:  /etc/grafana/provisioning/dashbords
