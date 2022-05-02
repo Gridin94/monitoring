@@ -39,8 +39,8 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    expose:
-      - 9100
+    ports:
+      - '9100:9100'
     network_mode: host
   prometheus:
     image: prom/prometheus:$prometheus
@@ -48,15 +48,15 @@ services:
     restart: unless-stopped
     volumes:
       - './prometheus/prometheus.yml:/etc/prometheus/prometheus.yml'
-    expose:
-      - 9090
+    ports:
+      - '9090:9090'
     network_mode: host
   grafana:
     image: grafana/grafana-enterprise:$grafana
     container_name: grafana
     restart: unless-stopped
-    expose:
-      - 3000
+    ports:
+      - '3000:3000'
     network_mode: host
     depends_on:
       - prometheus
