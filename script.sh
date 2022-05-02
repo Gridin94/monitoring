@@ -12,15 +12,15 @@ read grafana
 #Check if user inserted a version:
 if [ -z "$prometheus" ] 
   then
-    $prometheus='latest'
+    $prometheus="latest"
 fi
 if [ -z "$node" ]
   then
-    $node='latest'
+    $node="latest"
 fi  
 if [ -z "$grafana" ]
   then
-    $grafana='latest'
+    $grafana="latest"
 fi
 
 #Create docker-compose file with user versions:
