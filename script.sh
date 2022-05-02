@@ -80,4 +80,4 @@ services:
 # docker run -d --name=grafana -p 3000:3000 grafana/grafana-enterprise:$grafana
 
 #Run docker compose:
-# docker-compose -f $PWD/docker/docker-compose.yml up -d
+docker-compose -f docker-compose.yml up -d
