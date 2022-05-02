@@ -24,7 +24,7 @@ if [ -z "$grafana" ]
 fi
 
 #Create docker-compose file with user versions:
-echo "version: '2'
+echo "version: '3.8'
 services:
   node-exporter:
     image: prom/node-exporter:$node
@@ -39,8 +39,8 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    ports:
-      - '9100:9100'
+    expose:
+      - 9100
     network_mode: host
   prometheus:
     image: prom/prometheus:$prometheus
@@ -48,15 +48,15 @@ services:
     restart: unless-stopped
     volumes:
       - './prometheus.yml:/etc/prometheus/prometheus.yml'
-    ports:
-      - '9090:9090'
+    expose:
+      - 9090
     network_mode: host
   grafana:
     image: grafana/grafana-enterprise:$grafana
     container_name: grafana
     restart: unless-stopped
-    ports:
-      - '3000:3000'
+    expose:
+      - 3000
     network_mode: host
     depends_on:
       - prometheus
