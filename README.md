@@ -34,6 +34,10 @@ __Skip the change pass for now.__
 
 __Now you can enter the dashboard by clicking on `Node Exporter Full`.__
 
+__The dashboard I've used called `Node Exporter Full` and it fetch all__
+
+__the needed info.__
+
 ## Some images for reference:
 
 ![Grafana_home](https://user-images.githubusercontent.com/100672115/166343796-93792488-e634-4ad3-9c03-4a5e70087926.png)
