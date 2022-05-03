@@ -55,6 +55,7 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.retention.time=${storageretention}h'
     ports:
       - '9090:9090'
