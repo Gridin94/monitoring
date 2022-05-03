@@ -24,6 +24,10 @@ if [ -z "$grafana" ]
   then
     grafana="latest"
 fi
+if [ -z "$storage" ]
+  then
+    storage="10"
+fi
 
 #Create docker-compose file with user versions:
 echo "version: '3.3'
@@ -51,7 +55,7 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
-      - '--storage.tsdb.retention.time='$storage'h'
+      - '--storage.tsdb.retention.time=${storage}h'
     ports:
       - '9090:9090'
     network_mode: host
