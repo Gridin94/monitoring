@@ -22,6 +22,8 @@ __Run the script with `sh ./script.sh`.__
 
 __Enter version numbers or hit enter for the latest versions.__
 
+__Enter Prometheus Retention in hours (int) - default set to 10h.__
+
 __Wait for the script to finish...__
 
 __Now you can enter the `Grafana` UI at `localhost:3000`.__
