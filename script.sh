@@ -9,7 +9,7 @@ read node
 echo "Insert Grafana version:"
 read grafana
 echo "Insert Prometheus Retention in hours:"
-read storage
+read storageretention
 
 #Check if user inserted a version:
 if [ -z "$prometheus" ] 
@@ -24,9 +24,9 @@ if [ -z "$grafana" ]
   then
     grafana="latest"
 fi
-if [ -z "$storage" ]
+if [ -z "$storageretention" ]
   then
-    storage="10"
+    storageretention="10"
 fi
 
 #Create docker-compose file with user versions:
@@ -55,7 +55,7 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
-      - '--storage.tsdb.retention.time=${storage}h'
+      - '--storage.tsdb.retention.time=${storageretention}h'
     ports:
       - '9090:9090'
     network_mode: host
