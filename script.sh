@@ -2,12 +2,14 @@
 
 #Get versions from user:
 echo "Insert version number or hit enter for the latest version"
-echo "Insert Prometheus version"
+echo "Insert Prometheus version:"
 read prometheus
-echo "Insert Node exporter version"
+echo "Insert Node exporter version:"
 read node
-echo "Insert Grafana version"
+echo "Insert Grafana version:"
 read grafana
+echo "Insert Prometheus Retention in hours:"
+read storage
 
 #Check if user inserted a version:
 if [ -z "$prometheus" ] 
@@ -48,6 +50,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--storage.tsdb.retention.time='$storage'h'
     ports:
       - '9090:9090'
     network_mode: host
@@ -78,3 +82,5 @@ docker cp grafana/dashboard.yml grafana:/etc/grafana/provisioning/dashboards/das
 
 #Restart grafana docker:
 docker restart /grafana
+
+echo "Setting up dockers is done please procceed to grafana at http://localhost:3000"
