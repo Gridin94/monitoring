@@ -1,5 +1,3 @@
-## Outbrain home assignment
-
 # Develop a tool that will spin up a Prometheus environment with Grafana
 
 __Provide developers a full monitoring environment on their local laptops which will help them to develop their code and see how their service behaves before going to production.__
